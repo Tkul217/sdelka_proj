@@ -45,6 +45,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('dashboard.instagramReels.index') }}">{{ __('Instagram') }}</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('dashboard.buttons.index') }}">{{ __('Кнопки Топ 3') }}</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

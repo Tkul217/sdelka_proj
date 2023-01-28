@@ -57,7 +57,7 @@ class ApartmentsController extends Controller
             Storage::delete($apartment->image);
             if ($request->hasFile('image')){
                 $resize = Image::make($request->file('image'))->resize(400, 350)
-                    ->save('storage/apartments/' . $request->file('image')->hashName());
+                    ->save('storage/apartments' . $request->file('image')->hashName());
                 Apartment::update([
                     'title' => $data['title'],
                     'description' => $data['description'],
