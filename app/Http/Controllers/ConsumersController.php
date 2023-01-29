@@ -30,6 +30,7 @@ class ConsumersController extends Controller
                 'name' => $data['name'],
                 'phone' => $data['phone'],
                 'role' => $data['role'],
+                'work_experience' => $data['work_experience'],
                 'avatar' => 'public/consumers/' . $resize->basename,
             ]);
         }
@@ -61,6 +62,7 @@ class ConsumersController extends Controller
                     'name' => $data['name'],
                     'phone' => $data['phone'],
                     'role' => $data['role'],
+                    'work_experience' => $data['work_experience'],
                     'avatar' => 'public/consumers/' . $resize->basename,
                 ]);
             }

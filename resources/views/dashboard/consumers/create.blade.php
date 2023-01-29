@@ -30,6 +30,10 @@
                                 <input class="form-control" type="text" id="role" name="role">
                             </div>
                             <div class="mb-3">
+                                <label for="role" class="form-label">Добавьте стаж работы</label>
+                                <input class="form-control" type="text" id="role" name="work_experience">
+                            </div>
+                            <div class="mb-3">
                                 <label for="avatar" class="form-label">Добавьте фотографию</label>
                                 <input class="form-control" type="file" id="avatar" name="avatar">
                             </div>

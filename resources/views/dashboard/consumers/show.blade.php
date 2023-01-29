@@ -22,9 +22,10 @@
                     </div>
                     <div class="card-img-top d-flex flex-wrap">
                         <div class="card-body">
-                            <h4 class="card-title">{{$consumer->name}}</h4>
-                            <p class="card-text">{{$consumer->phone}}</p>
-                            <p class="card-text">{{$consumer->role}}</p>
+                            <h4 class="card-title">Имя/Фамилия: {{$consumer->name}}</h4>
+                            <p class="card-text">Номер телефона: {{$consumer->phone}}</p>
+                            <p class="card-text">Должность: {{$consumer->role}}</p>
+                            <p class="card-text">Стаж работы: {{$consumer->work_experience}}</p>
                             @if($consumer->avatar)
                                 <img src="{{\Illuminate\Support\Facades\Storage::url($consumer->avatar)}}">
                             @endif

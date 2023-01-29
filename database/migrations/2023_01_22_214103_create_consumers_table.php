@@ -11,6 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->string('name');
             $table->string('phone')->unique();
+            $table->string('work_experience');
             $table->string('role');
             $table->text('avatar')->nullable();
             $table->timestamps();

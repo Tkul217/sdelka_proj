@@ -12,6 +12,7 @@ class ConsumerRequest extends FormRequest
             'name' => 'required',
             'phone' => 'required|min:11|max:11',
             'role' => 'required',
+            'work_experience' => 'required',
             'avatar' => 'nullable|image'
         ];
     }

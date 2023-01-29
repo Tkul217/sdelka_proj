@@ -13,5 +13,6 @@ class Consumer extends Model
         'phone',
         'role',
         'avatar',
+        'work_experience',
     ];
 }

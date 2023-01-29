@@ -36,6 +36,10 @@
                                     <input value="{{$consumer->role}}" class="form-control" type="text" id="role" name="role">
                                 </div>
                                 <div class="mb-3">
+                                    <label for="role" class="form-label">Изменить стаж работы</label>
+                                    <input value="{{$consumer->work_experience}}" class="form-control" type="text" id="role" name="role">
+                                </div>
+                                <div class="mb-3">
                                     <label for="avatar" class="form-label">Изменить фотографию</label>
                                     <input class="form-control" type="file" id="avatar" name="avatar">
                                 </div>

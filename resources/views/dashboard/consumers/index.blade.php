@@ -24,9 +24,10 @@
                                         <img class="card-img-top" src="{{\Illuminate\Support\Facades\Storage::url($consumer->avatar)}}" alt="Card image cap">
                                     @endif
                                     <div class="card-body">
-                                        <h4 class="card-title">{{$consumer->name}}</h4>
-                                        <p class="card-text">{{$consumer->phone}}</p>
-                                        <p class="card-text">{{$consumer->role}}</p>
+                                        <h4 class="card-title">Имя/Фамилия: {{$consumer->name}}</h4>
+                                        <p class="card-text">Номер телефона: {{$consumer->phone}}</p>
+                                        <p class="card-text">Должность: {{$consumer->role}}</p>
+                                        <p class="card-text">Стаж работы: {{$consumer->work_experience}}</p>
                                         <a href="{{route('dashboard.consumers.show', $consumer)}}" class="btn btn-primary">Перейти к агенту</a>
                                     </div>
                                 </div>
