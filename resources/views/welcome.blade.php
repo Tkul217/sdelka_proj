@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sdelka</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         .itc-slider__item {
@@ -410,6 +413,16 @@
                                 </svg>
                                 +{{$consumer->phone}}
                             </div>
+                            <div class="phone">
+                                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 9C2 7.89543 2.89543 7 4 7H20C21.1046 7 22 7.89543 22 9V20C22 21.1046 21.1046 22 20 22H4C2.89543 22 2 21.1046 2 20V9Z" stroke="#0077b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=""></path>
+                                    <path d="M16 7V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V7" stroke="#0077b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=""></path>
+                                    <path d="M22 12H2" stroke="#0077b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=""></path>
+                                    <path d="M7 12V14" stroke="#0077b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=""></path>
+                                    <path d="M17 12V14" stroke="#0077b6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style=""></path>
+                                </svg>
+                                {{$consumer->work_experience}}
+                            </div>
                             <div class="position">
                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <rect width="28" height="28" fill="url(#pattern0)"/>
@@ -438,19 +451,40 @@
                     <a href="">Больше новостей</a>
                 </div>
                 <div class="cards">
-                    <div class="card">
-                        <div class="img_wrapper">
-                            <img src="{{asset('images/blog_placeholder.png')}}" alt="">
-                        </div>
-                        <div class="blog_wrapper">
-                            <div class="blog_content">
-                                <h4>Отбасы банк продлил срок приёма заявок на компенсацию по вкладам</h4>
-                                <p>С 10 часов утра 12 января подать заявку вкладчики смогут тремя способами.</p>
-                                <a href="">Читать дальше</a>
+                    @foreach($blogs as $blog)
+                        <div class="card">
+                            <div class="img_wrapper">
+                                <img src="{{\Illuminate\Support\Facades\Storage::url($blog->image)}}" alt="">
+                            </div>
+                            <div class="blog_wrapper">
+                                <div class="blog_content">
+                                    <h4>{{$blog->title}}</h4>
+                                    <p>{{\Illuminate\Support\Str::limit($blog->description, 40)}}</p>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                        Читать дальше
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">{{$blog->title}}</h5>
+                                                </div>
+                                                <div class="modal-body">
+                                                    {{$blog->description}}
+                                                    <img src="{{\Illuminate\Support\Facades\Storage::url($blog->image)}}" alt="">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    @endforeach
+                    {{$blogs->links(null, [], 'blog')}}
                 </div>
             </div>
         </div>

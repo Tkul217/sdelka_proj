@@ -31,7 +31,7 @@ Route::get('/', function () {
         'buttons' => Button::all(),
         'partners' => Partner::all(),
         'apartments' => Apartment::paginate(),
-        'blogs' => Blog::all(),
+        'blogs' => Blog::paginate(4),
         'consumers' => Consumer::paginate(),
         'instagramReels' => InstagramReels::paginate(),
     ]);
