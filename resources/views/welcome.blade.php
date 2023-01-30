@@ -56,9 +56,9 @@
                                 <h4>- Перемены к лучшему!</h4>
                                 <h3>ТОП 3 ЛУЧШИХ СПЕЦИАЛИСТОВ ПО НЕДВИЖИМОСТИ</h3>
                                 <p>Лучшие агенты которые помогут найти для вас подхлдящую недвижимость в кратчайшие сроки!</p>
-                                <a href="#">
-                                    Алтын
-                                </a>
+                                @foreach($buttons->where('slider_id', 1) as $button)
+                                    <a href="">{{$button->button_name}}</a>
+                                @endforeach
                             </div>
                             <div class="main_img">
                                 <img src="{{asset('/images/main_image.png')}}" alt="" height="100%">
@@ -77,9 +77,9 @@
                             <div class="main_text">
                                 <h3>ПРОФЕССИОНАЛЬНЫЕ РИЭЛТОРСКИЕ УСЛУГИ ПО АСТАНЕ</h3>
                                 <p>Найдем покупателей за 14 дней и продадим Вашу квартиру на 10% дороже рынка</p>
-                                <a href="#">
-                                    БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
-                                </a>
+                                @foreach($buttons->where('slider_id', 2) as $button)
+                                    <a href="">{{$button->button_name}}</a>
+                                @endforeach
                             </div>
                             <div class="main_img">
                                 <img src="{{asset('/images/main_image.png')}}" alt="" height="100%">
