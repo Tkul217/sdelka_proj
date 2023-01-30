@@ -135,10 +135,22 @@ ul{
 }
 .about_container .content{
     display: flex;
+    margin: 0 1vw;
+}
+.about_img img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto;
 }
 .about_text{
-    padding-top: 100px;
+    padding-top: 5vh;
     padding-left: 56px;
+
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto;
 }
 .about_text h3{
     font-family: 'Oswald';
@@ -202,7 +214,7 @@ ul{
 }
 .about_nums_container .content .description{
     display: flex;
-    gap: 60px;
+    gap: 15px 60px;
 }
 .about_nums_container .content .description .first{
     font-family: 'Satoshi', sans-serif;
@@ -643,23 +655,6 @@ ul{
     position: relative;
 }
 .for_sale{
-    background: #ea2139;
-    border-radius: 0px 16px;
-    padding: 8px 16px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-family: 'Oswald';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-    text-transform: capitalize;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #FFFFFF;
-}
-
-.for_arenda{
     background: #0A9396;
     border-radius: 0px 16px;
     padding: 8px 16px;
@@ -791,7 +786,8 @@ ul{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 16px;
+    justify-content: center;
+    gap: 110px 16px;
 }
 .blog_container .img_wrapper{
     display: flex;
@@ -1221,14 +1217,79 @@ footer h3{
 
 
 
+
+
+
+
+
+
+/* new adds */
+.best_estate_container .content img{
+    height: 100%;
+    width: 100%;
+}
+
 /* media */
-@media (max-width:1230px){
+@media (max-width:1024px){
+    section h3{
+        text-align: center !important;
+    }
+    #insta_reels .content .reels{
+        border-radius: 0;
+    }
+    .hire_container{
+        border-radius: 0;
+    }
+    .about_nums_container .content{
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
     .best_estate_container .content{
         flex-wrap: wrap;
     }
     .best_estate_container .content .description{
         margin: 0;
         text-align: center;
+    }
+}
+
+@media (max-width:768px){
+    .about_container .content{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .about_text{
+        padding: 1vh;
+    }
+    .about_nums_container .content .description{
+        flex-direction: column;
+    }
+    .advantages_container .content .card-1{
+        width: 310px;
+    }
+    .advantages_container .content .card-2{
+        width: 310px;
+    }
+
+    .team_container .content .cards .card .img_wrapper{
+        width: 310px;
+    }
+    .blog_container .img_wrapper{
+        width: 310px;
+    }
+    .blog_container .blog_content{
+        width: 310px;
+    }
+    .our_office_container .cards .card .img_wrapper{
+        width: 310px;
+    }
+    .our_office_container .text_wrapper .text{
+        width: 310px;
+    }
+    .hoverEffect{
+        width: 310px;
     }
 }
 

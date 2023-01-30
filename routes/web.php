@@ -37,6 +37,8 @@ Route::get('/', function () {
     ]);
 })->name('main');
 
+Route::post('/contact_form', \App\Http\Controllers\ContactController::class)->name('contact-form');
+
 Auth::routes();
 Route::middleware('auth')
     ->prefix('dashboard')

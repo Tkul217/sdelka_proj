@@ -491,21 +491,22 @@
         <div class="contact_container">
             <h4>Свяжитесь с нами!</h4>
             <p>Заполните форму ниже, чтобы связаться с нами</p>
-            <form action="" method="post">
+            <form action="{{route('contact-form')}}" method="post">
+                @csrf
                 <div class="name">
                     <div class="item">
                         <label for="fname">Имя</label><br/>
-                        <input type="text" id="fname" placeholder="Введите здесь свое имя">
+                        <input type="text" id="fname" name="name" placeholder="Введите здесь свое имя">
                     </div>
 
                     <div class="item">
                         <label for="sname">Фамилия</label><br/>
-                        <input type="text" id="sname" placeholder="Введите здесь свою фамилию">
+                        <input type="text" id="sname" name="last_name" placeholder="Введите здесь свою фамилию">
                     </div>
                 </div>
                 <div class="email">
                     <label for="email">Email</label><br/>
-                    <input type="email" id="email" placeholder="Введите свой адрес электронной почты здесь">
+                    <input type="email" id="email" name="email" placeholder="Введите свой адрес электронной почты здесь">
                 </div>
                 <div class="message">
                     <label for="message">Сообщение</label><br/>
